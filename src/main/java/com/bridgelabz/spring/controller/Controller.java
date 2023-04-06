@@ -1,4 +1,5 @@
 package com.bridgelabz.spring.controller;
+import com.bridgelabz.spring.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,5 +22,11 @@ public class Controller {
     @RequestMapping(value = "/path/{name}",method = RequestMethod.GET)
     public String passName(@PathVariable ("name") String name){
         return "Hello "+name+ "!!";
+    }
+    //UC-4 Passing FirstName and LastName In Body
+    @RequestMapping(value = "/post",method = RequestMethod.POST)
+    public String details(@RequestBody User user){
+        return "Hello "+user.getFirstName()+" "+user.getLastName()+ " My MobleNumber is: " +user.getMobileNumber()+ " Address : "+ user.getAddress();
+
     }
 }
