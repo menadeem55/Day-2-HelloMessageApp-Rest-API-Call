@@ -17,4 +17,9 @@ public class Controller {
     public String sayHelloAgain (@RequestParam(value = "name")String name){
         return "Hello " + name + "From Bridgelabz";
     }
+    //UC-3 //PathVariable
+    @RequestMapping(value = "/path/{name}",method = RequestMethod.GET)
+    public String passName(@PathVariable ("name") String name){
+        return "Hello "+name+ "!!";
+    }
 }
